@@ -1,5 +1,7 @@
 # Implementation plan
 
+Use the [ordered execution checklist](execution-checklist.md) to track implementation, test evidence, and acceptance gates for this plan.
+
 Confirmed target: a **custom printer using the 2 GB Arduino UNO Q**, with 4 GB acceptable only if measurements establish a requirement. Planning baseline for the unspecified mechanics: Cartesian XYZ plus one extruder, one hotend, heated bed, three endstops, and two controllable fans. Board ownership/revision, kinematics, drivers, and performance requirements are still unknown. This is an engineering plan, not an executable flashing procedure.
 
 ## Decision and architecture

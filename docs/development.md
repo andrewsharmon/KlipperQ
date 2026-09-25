@@ -7,7 +7,7 @@ KlipperQ coordinates the complete UNO Q printer project. Firmware changes live i
 - `KlipperQ`: architecture, carrier hardware, wiring, host setup, recovery procedures, validation evidence, and release manifests.
 - `klipper`: STM32U585 target support, firmware changes, relevant tests, and upstream-appropriate board configuration and documentation.
 
-The local project directory is currently named `klippduino`; its GitHub repository and project identity are KlipperQ. The firmware checkout is a sibling directory named `klipper`.
+Documented filesystem paths are relative to the `klipperq` project root (`.`). Its GitHub repository and project identity are KlipperQ. The firmware checkout is at `../klipper`.
 
 ## Firmware branches and remotes
 

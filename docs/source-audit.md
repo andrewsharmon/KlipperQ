@@ -30,7 +30,7 @@ These repositories were downloaded for read-only inspection. None is a deployed 
 - Firmware compilation for the new target, all timing/ADC/output behavior, and first print.
 - Printer electronics, motor currents, heater ratings, sensor models, wiring, and target step rate.
 
-The existing hardware catalog was consulted at `/Users/andrewharmon/git/tools`. It contains a generic Arduino onboarding entry, but no identified UNO Q record. No catalog entry was invented for an unverified device. A model-specific record and setup log should be created when the actual board is onboarded.
+The existing hardware catalog was consulted at `../tools`. It contains a generic Arduino onboarding entry, but no identified UNO Q record. No catalog entry was invented for an unverified device. A model-specific record and setup log should be created when the actual board is onboarded.
 
 User requirement confirmed during this assessment: a custom printer; prioritize the 2 GB model and consider 4 GB only if necessary. Actual board ownership and revision remain unconfirmed.
 

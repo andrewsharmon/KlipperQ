@@ -36,6 +36,6 @@ Target: Andrew's custom printer, using the **2 GB UNO Q**. There is no identifie
 | Printer I/O | A basic four-motor printer fits a provisional header allocation. Electrical interfacing is required. |
 | Main uncertainty | Correct MCU startup, clock/timer behavior, UART integration, ADC, and safe recovery. |
 
-Read the [implementation plan](docs/implementation-plan.md) and [source audit](docs/source-audit.md). The conclusion is based on documentation and source inspection, **not a successful build, flash, or printing test**. No hardware was accessed or modified.
+Read the [implementation plan](docs/implementation-plan.md), [ordered implementation and testing checklist](docs/execution-checklist.md), and [source audit](docs/source-audit.md). The conclusion is based on documentation and source inspection, **not a successful build, flash, or printing test**. No hardware was accessed or modified.
 
 Immediate milestone: make unmodified Klippy on the UNO Q identify its onboard STM32 running a minimal Klipper port, maintain clock synchronization, and toggle one unloaded output with measured timing.
