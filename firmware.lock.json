@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/andrewsharmon/klipper.git",
+  "branch": "uno-q",
+  "commit": "ce7002bedf37e938bb483572949f3703ac6476cb",
+  "upstream": "https://github.com/Klipper3d/klipper.git",
+  "status": "unmodified-upstream-baseline",
+  "uno_q_validated": false,
+  "notes": "Source-audited in docs/source-audit.md. No UNO Q port, build, flash, or hardware validation has been performed."
+}
