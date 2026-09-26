@@ -56,6 +56,6 @@ Installed paths:
 - Mainsail: `/home/arduino/mainsail`
 - Runtime data and configuration: `/home/arduino/printer_data`
 
-The current `printer.cfg` uses `kinematics: none` and configures no steppers, heaters, sensors, fans, or other external outputs. It exists only to validate host/MCU communication and the UI.
+The active `printer.cfg` uses `kinematics: none` and maps a generic CNC Shield V3.00. X/Y/Z are manual steppers; the endstops, control buttons, probe, spindle direction/enable, and coolant signals are also defined. Power-capable outputs start low and return low on shutdown. The repository source is `config/uno-q-cnc-shield-v3.cfg`; `config/uno-q-minimal.cfg` remains the no-output communication baseline.
 
 Moonraker uses the `systemd_dbus` machine provider with its official PolicyKit rules. Mainsail can manage approved system services and request reboot, shutdown, or poweroff of the UNO Q. Access remains restricted to the local board services and the USB/ADB-forwarded web endpoint.
