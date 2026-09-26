@@ -28,7 +28,7 @@ Check an item only when its deliverable and validation evidence exist. Store pro
 
 ## 3. Identify the board and establish recovery
 
-- [ ] Consult the hardware catalog, search for an existing UNO Q entry, and onboard the actual board using its device template; update the catalog index and setup log when identity is verified.
+- [x] Consult the hardware catalog, search for an existing UNO Q entry, and onboard the actual board using its device template; update the catalog index and setup log when identity is verified.
 - [ ] Record the Linux image/kernel, Python/architecture, actual UART device, service owners, MCU ID, bootloader, flash layout, security state, and option bytes using documented read operations.
 - [ ] Preserve readable factory firmware, option-byte records, installed loader/debug configurations, and restoration artifacts with checksums; document anything that cannot be backed up.
 - [ ] Audit router stop/start hooks, upload/App Lab services, reset lines, and SWD access before changing UART ownership or stopping services.
@@ -39,12 +39,12 @@ Check an item only when its deliverable and validation evidence exist. Store pro
 
 ## 4. Write and compile the minimal STM32U585 port
 
-- [ ] Add U585 target selection, build rules, licensed ST headers, and `internal.h` integration in the firmware fork.
-- [ ] Implement startup/vector/linker support for the verified boot address, security state, and SRAM banks; inspect ELF sections, stack placement, vector table, and image size against the actual memory layout.
-- [ ] Implement clocks, reset/power helpers, voltage scaling, flash wait states, peripheral clocks, and the internal UART's VDDIO2 setup from the verified board configuration.
-- [ ] Integrate the timer and interrupt priorities, establishing DWT/SysTick availability and fixed-clock assumptions; avoid sleep states that stop the timebase.
-- [ ] Implement LPUART1 pin mux, clock/divisor setup, interrupt RX/TX, and error recovery through Klipper's serial machinery. Start at 115200 with matching flow-control settings.
-- [ ] Implement one unloaded GPIO and minimum shutdown/reset behavior using Klipper's shared command machinery.
+- [x] Add U585 target selection, build rules, licensed ST headers, and `internal.h` integration in the firmware fork.
+- [x] Implement startup/vector/linker support for the verified boot address, security state, and SRAM banks; inspect ELF sections, stack placement, vector table, and image size against the actual memory layout.
+- [x] Implement clocks, reset/power helpers, voltage scaling, flash wait states, peripheral clocks, and the internal UART's VDDIO2 setup from the verified board configuration.
+- [x] Integrate the timer and interrupt priorities, establishing DWT/SysTick availability and fixed-clock assumptions; avoid sleep states that stop the timebase.
+- [x] Implement LPUART1 pin mux, clock/divisor setup, interrupt RX/TX, and error recovery through Klipper's serial machinery. Start at 115200 with matching flow-control settings.
+- [x] Implement one unloaded GPIO and minimum shutdown/reset behavior using Klipper's shared command machinery.
 - [ ] Add the UNO Q compile configuration to CI. Build from a clean checkout; archive configuration, ELF/binary, protocol dictionary, size report, build log, and artifact checksums.
 - [ ] Run whitespace, affected existing STM32 builds, and Klippy import/regression tests. Add focused tests for any new testable calculations or common-code changes; document peripheral behavior that still requires hardware.
 
@@ -52,9 +52,9 @@ Check an item only when its deliverable and validation evidence exist. Store pro
 
 ## 5. Bring up the host and prove the first milestone
 
-- [ ] Write version-pinned host installation and service configuration for Klippy, Moonraker, and the chosen UI on the supported UNO Q Linux image; build the host C helper and verify imports.
+- [x] Write version-pinned host installation and service configuration for Klippy, Moonraker, and the chosen UI on the supported UNO Q Linux image; build the host C helper and verify imports.
 - [ ] Implement printing-mode service ownership and boot order based on Stage 3's audit; verify exclusive access to the actual UART and controlled reset behavior.
-- [ ] Write the board-specific flashing procedure using the exact built artifact, verified target, backup, and recovery details. With loads disconnected, flash and record verification results.
+- [x] Write the board-specific flashing procedure using the exact built artifact, verified target, backup, and recovery details. With loads disconnected, flash and record verification results.
 - [ ] Demonstrate stock Klippy identify, configuration, clock queries, and shutdown through the native serial protocol.
 - [ ] Measure the unloaded GPIO waveform against scheduled timing; verify the timebase through repeated counter wraparound and resets.
 - [ ] Run the one-hour synthetic synchronization test; retain host logs, serial statistics, and scope captures against Stage 1 limits.

@@ -32,7 +32,9 @@ These repositories were downloaded for read-only inspection. None is a deployed 
 
 The existing hardware catalog was consulted at `../tools`. It contains a generic Arduino onboarding entry, but no identified UNO Q record. No catalog entry was invented for an unverified device. A model-specific record and setup log should be created when the actual board is onboarded.
 
-User requirement confirmed during this assessment: a custom printer; prioritize the 2 GB model and consider 4 GB only if necessary. Actual board ownership and revision remain unconfirmed.
+Follow-up, 2026-09-25: the physical 2 GB board was identified over USB ADB and added to the hardware catalog at `../tools/boards/arduino-uno-q/`. See the [passive board inventory](../records/validation/2026-09-25-uno-q-board-inventory.md). This does not change the source-audit facts or establish the MCU boot/recovery contract.
+
+User requirement confirmed during this assessment: a custom printer; prioritize the 2 GB model and consider 4 GB only if necessary. At the time of the audit, actual board ownership and revision were unconfirmed; the follow-up inventory confirms ownership and the 2 GB SKU, while the PCB revision remains open.
 
 ## Primary references
 

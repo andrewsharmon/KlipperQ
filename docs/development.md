@@ -18,6 +18,8 @@ Documented filesystem paths are relative to the `klipperq` project root (`.`). I
 
 Keep changes focused and use separate commits for coherent firmware work. Follow upstream's contribution and sign-off requirements when preparing contributions. Experimental development stays in the fork until hardware testing and regression checks establish readiness; upstream acceptance is not guaranteed.
 
+The clean STM32U585 build and artifact verifier are documented in [firmware-build.md](firmware-build.md).
+
 ## Reproducible firmware revision
 
 `firmware.lock.json` records the exact firmware revision associated with this project's documentation. The initial revision matches `docs/source-audit.md` and is an unmodified upstream baseline. It has not been built, flashed, or validated on the UNO Q. The source audit remains a historical reference and must be revisited when advancing the pin.

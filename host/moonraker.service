@@ -1,0 +1,17 @@
+[Unit]
+Description=Moonraker API server for Klipper
+After=network.target klipper.service
+Wants=klipper.service
+
+[Service]
+Type=simple
+User=arduino
+Group=arduino
+SupplementaryGroups=moonraker-admin
+WorkingDirectory=/home/arduino/moonraker
+ExecStart=/home/arduino/moonraker-env/bin/python /home/arduino/moonraker/moonraker/moonraker.py -d /home/arduino/printer_data
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

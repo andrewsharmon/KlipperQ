@@ -1,0 +1,19 @@
+[Unit]
+Description=Klipper host software for Arduino UNO Q
+After=local-fs.target
+Conflicts=arduino-router.service arduino-app-cli.service
+
+[Service]
+Type=simple
+User=arduino
+Group=arduino
+SupplementaryGroups=dialout
+WorkingDirectory=/home/arduino/klipper
+ExecStartPre=+/usr/local/sbin/klipperq-start-mcu
+ExecStartPre=/bin/sleep 1
+ExecStart=/home/arduino/klippy-env/bin/python /home/arduino/klipper/klippy/klippy.py /home/arduino/printer_data/config/printer.cfg -l /home/arduino/printer_data/logs/klippy.log -a /home/arduino/printer_data/comms/klippy.sock
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
