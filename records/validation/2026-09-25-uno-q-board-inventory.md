@@ -60,7 +60,7 @@ The installed recovery path is `/opt/openocd/bin/openocd` with `/opt/openocd/ope
 The complete readable MCU flash was then backed up with printer loads disconnected:
 
 - Board copy: `/home/arduino/uno-q-stock-stm32u585-2026-09-25.bin`
-- Catalog copy: `/Users/andrewharmon/git/tools/boards/arduino-uno-q/backups/uno-q-stock-stm32u585-2026-09-25.bin`
+- Catalog copy: `uno-q-stock-stm32u585-2026-09-25.bin` in the maintainer's private board-backup catalog (not published)
 - Size: 2,097,152 bytes
 - SHA-256 on both copies: `c550fc1a0bfa988014af6c877e5e5ab31c54e63b34be55b318ebc216ac4062d0`
 

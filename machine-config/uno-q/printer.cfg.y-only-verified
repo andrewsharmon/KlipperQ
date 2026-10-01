@@ -1,0 +1,61 @@
+# Arduino UNO Q with a generic Arduino CNC Shield V3.00.
+#
+# This bring-up configuration intentionally exposes only the populated Y
+# driver socket as a manual stepper.  X, Z, A, spindle, coolant, limits, and
+# probe signals remain unconfigured and inert.
+#
+# Shield-to-UNO-Q mapping (Arduino header name -> STM32U585 GPIO):
+#   Y STEP: D3 -> PB0
+#   Y DIR:  D6 -> PB1
+#   ENABLE: D8 -> PB4 (shared by every driver socket, active low)
+#
+# The 1 microstep setting below matches a shield with no Y microstep jumpers.
+# Change it to match the physical M0/M1/M2 jumpers before using distances as
+# calibrated units.  The 40 mm rotation distance is only a conservative test
+# scale; it is not a machine calibration.
+
+[mcu]
+serial: /dev/ttyHS1
+baud: 115200
+
+[printer]
+kinematics: none
+max_velocity: 1
+max_accel: 5
+
+[board_pins cnc_shield_v3]
+aliases:
+    CNC_Y_STEP=PB0,
+    CNC_Y_DIR=PB1,
+    CNC_ENABLE=PB4
+
+[manual_stepper cnc_y]
+step_pin: CNC_Y_STEP
+dir_pin: CNC_Y_DIR
+enable_pin: !CNC_ENABLE
+microsteps: 1
+rotation_distance: 40
+step_pulse_duration: 0.000004
+velocity: 1
+accel: 5
+
+# Moves 25 full-step equivalents forward and back for a typical 200-step
+# motor, then releases the driver.  The physical angle depends on the motor
+# and the shield's Y microstep jumpers.
+[gcode_macro CNC_Y_TEST]
+description: Slowly exercise the CNC Shield Y driver in both directions
+gcode:
+    MANUAL_STEPPER STEPPER=cnc_y ENABLE=1 SET_POSITION=0
+    MANUAL_STEPPER STEPPER=cnc_y MOVE=5 SPEED=1 ACCEL=5
+    G4 P500
+    MANUAL_STEPPER STEPPER=cnc_y MOVE=0 SPEED=1 ACCEL=5
+    MANUAL_STEPPER STEPPER=cnc_y ENABLE=0
+
+[virtual_sdcard]
+path: /home/arduino/printer_data/gcodes
+
+[display_status]
+
+[pause_resume]
+
+[respond]

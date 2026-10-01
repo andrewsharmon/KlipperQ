@@ -44,4 +44,10 @@ Implementation status, 2026-09-25: the sibling `klipper` worktree contains an in
 
 Host update, 2026-09-26: Klippy, Moonraker, and Mainsail now run on the UNO Q. Stock Klippy connects to and configures the onboard MCU at 115200 baud. Mainsail is available to the attached computer over a USB/ADB forward at `http://127.0.0.1:8181/`; see the [USB web UI guide](docs/usb-web-ui.md) and [validation record](records/validation/2026-09-26-usb-web-ui.md). The initial no-output configuration remains in [`config/uno-q-minimal.cfg`](config/uno-q-minimal.cfg). The active hardware configuration is [`config/uno-q-cnc-shield-v3.cfg`](config/uno-q-cnc-shield-v3.cfg): it maps the complete generic CNC Shield V3.00 interface, exposes X/Y/Z as manual steppers, configures their limit inputs, control buttons, probe input, and safe-low spindle/coolant outputs, and documents the spindle-versus-independent-A multiplex. Physical Y motion and the expanded configuration's controller state have been verified; see the [CNC Shield validation record](records/validation/2026-09-26-cnc-shield-v3-y.md).
 
+All files in the board's live machine configuration directory have byte-for-byte local copies. Run `scripts/sync-machine-configs.sh` to refresh the tracked [`machine-config/uno-q`](machine-config/uno-q) mirror over USB/ADB, and see the [configuration backup manifest](records/validation/2026-09-26-machine-config-backup.md) for the initial snapshot validation.
+
 Run `scripts/connect-mainsail-adb.sh` on the Mac to restore and verify the complete USB path. Add `--restart` to restart the board-side Klipper, Moonraker, and nginx services before reconnecting.
+
+## License
+
+KlipperQ is licensed under the [GNU General Public License v3.0](LICENSE).
