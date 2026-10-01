@@ -59,12 +59,8 @@ step_pin: CNC_Y_STEP
 dir_pin: CNC_Y_DIR
 enable_pin: !CNC_ENABLE
 endstop_pin: ^!CNC_Y_LIMIT
-# Standalone TMC2208, MS1+MS2 fitted: 1/16 microstepping, 200-step motor
-# (3200 steps/rev, per qstep BRINGUP_LOG 2026-09-24). Units are motor
-# revolutions until the axis mechanics are known.
-full_steps_per_rotation: 200
-microsteps: 16
-rotation_distance: 1
+microsteps: 1
+rotation_distance: 40
 step_pulse_duration: 0.000004
 velocity: 1
 accel: 5
@@ -131,7 +127,7 @@ gcode:
 description: Slowly exercise the CNC Shield Y driver in both directions
 gcode:
     MANUAL_STEPPER STEPPER=cnc_y ENABLE=1 SET_POSITION=0
-    MANUAL_STEPPER STEPPER=cnc_y MOVE=1 SPEED=1 ACCEL=5
+    MANUAL_STEPPER STEPPER=cnc_y MOVE=5 SPEED=1 ACCEL=5
     G4 P500
     MANUAL_STEPPER STEPPER=cnc_y MOVE=0 SPEED=1 ACCEL=5
     MANUAL_STEPPER STEPPER=cnc_y ENABLE=0

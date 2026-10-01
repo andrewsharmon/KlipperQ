@@ -1,5 +1,6 @@
 09a201813fb0e4f252765a53c27a875437193e5786fae4cfab58cbb216576eb9  ./printer.cfg.pre-cnc-shield-v3
 2b75adc04d71a388068b89cbe6cfc6a158119b95b9003c6740a4671579d2dba4  ./printer.cfg.y-only-verified
 5d4811dcc02e482bb576c0358e8a1b2e43e1498cc04c09159ae361e5c78c8b2d  ./moonraker.conf
-bfd9b04aa01e3eb4bcd9537603903a12f13d09e76f5200540f609ba206ec8adb  ./printer.cfg
+bfd9b04aa01e3eb4bcd9537603903a12f13d09e76f5200540f609ba206ec8adb  ./printer.cfg.pre-y-tmc2208
 f5d842fbf1cd9cd86ad3c7e3b4abf23c4428e5256600c08dd2e224208a8a3f75  ./.moonraker.conf.bkp
+fb1ed56d8f9975baa03b17fcd849cac5dea7b5051a7845a806eace5818c8841a  ./printer.cfg
