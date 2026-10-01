@@ -17,7 +17,7 @@ Optional environment variables:
 - `KLIPPER_SRC`: firmware checkout; default `../klipper`.
 - `LIMA_VM`: Lima VM name; default `arducnc`.
 - `LIMACTL`: `limactl` executable; default `../qstep/tools/bin/limactl`.
-- `CROSS_PREFIX`: guest-visible compiler prefix; default `/home/andrewharmon.guest/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-`.
+- `CROSS_PREFIX`: guest-visible compiler prefix; default `/home/$USER.guest/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-` (Lima's default guest home for your host username).
 
 To re-run only the artifact checks:
 

@@ -2,6 +2,11 @@
 
 An independent project bringing Klipper's Linux host and real-time motion control together on one Arduino UNO Q.
 
+> **Status:** partial hardware bring-up. This is not a working printer setup and there is no supported install. The firmware port has only moved a single stepper motor (the Y axis, on the bench, through a CNC Shield v3 with a TMC2208 driver). Heaters, endstops, other axes, and the long-run synchronization, clock-wrap, cold-boot and watchdog/recovery tests have not been done. See [`firmware.lock.json`](firmware.lock.json) and [`records/validation/`](records/validation/).
+
+> [!WARNING]
+> **Safety:** KlipperQ is experimental firmware for machines with motors and, eventually, heaters. It has not been validated for printing. Do not run it with heaters connected or leave it unattended. Only run it on the bench or on a machine that can't hurt anyone, and keep a way to cut motor and heater power within reach. KlipperQ comes with no warranty (see the GPL).
+
 ## Repositories
 
 - [KlipperQ](https://github.com/andrewsharmon/KlipperQ) contains project plans, hardware integration, setup and recovery documentation, and validation records.

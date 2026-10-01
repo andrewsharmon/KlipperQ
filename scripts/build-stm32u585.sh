@@ -5,7 +5,7 @@ project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 firmware_root=${KLIPPER_SRC:-"$project_root/../klipper"}
 lima_vm=${LIMA_VM:-arducnc}
 limactl=${LIMACTL:-"$project_root/../qstep/tools/bin/limactl"}
-cross_prefix=${CROSS_PREFIX:-/home/andrewharmon.guest/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-}
+cross_prefix=${CROSS_PREFIX:-/home/$(id -un).guest/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-}
 
 if [ ! -x "$limactl" ]; then
     echo "limactl is not executable: $limactl" >&2
