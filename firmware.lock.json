@@ -1,9 +1,10 @@
 {
   "repository": "https://github.com/andrewsharmon/klipper.git",
   "branch": "uno-q",
-  "commit": "ce7002bedf37e938bb483572949f3703ac6476cb",
+  "commit": "c306afcc02eaca388da010e8c4071fd14470e4a3",
   "upstream": "https://github.com/Klipper3d/klipper.git",
-  "status": "unmodified-upstream-baseline",
+  "upstream_base": "ce7002bedf37e938bb483572949f3703ac6476cb",
+  "status": "partial-hardware-bringup",
   "uno_q_validated": false,
-  "notes": "Source-audited in docs/source-audit.md. No UNO Q port, build, flash, or hardware validation has been performed."
+  "notes": "Initial STM32U585 port. Clean build of this commit (klipper.bin sha256 e39002fa78c0119182e5a7dd86e415b04c2b0f8171b9e1a69e18bdb9160c2a44) flashed, read back, identified, and passed CNC_Y_TEST on 2026-10-01 (records/validation/2026-10-01-stm32u585-c306afc-reflash.md); earlier bring-up in 2026-09-25-stm32u585-first-flash.md and 2026-09-26-cnc-shield-v3-y.md. Not yet met: one-hour synchronization, repeated clock wraps, cold boot and watchdog/recovery gates."
 }
