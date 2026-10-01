@@ -23,7 +23,7 @@ adb push scripts/probe-klipper-uart.py /home/arduino/probe-klipper-uart.py
 adb shell sha256sum /home/arduino/klipper-stm32u585.bin
 ```
 
-The firmware binary for the pinned commit has SHA-256 `e39002fa78c0119182e5a7dd86e415b04c2b0f8171b9e1a69e18bdb9160c2a44` (the earlier uncommitted bring-up image was `48e37002434867991b5db76f2ec8dbddee2430f7ab85671d114c106af8a89282`). Stop both stock UART owners, then program and verify the exact image:
+The firmware binary for the pinned commit has SHA-256 `8c5b7a761e6db32ef251ad978e9440e1be3d8e037d3f4ac1ff166e7dd0217648` (the earlier uncommitted bring-up image was `48e37002434867991b5db76f2ec8dbddee2430f7ab85671d114c106af8a89282`). Stop both stock UART owners, then program and verify the exact image:
 
 ```sh
 adb shell 'systemctl stop arduino-app-cli arduino-router; /opt/openocd/bin/openocd -d2 -s /opt/openocd -f openocd_gpiod.cfg -c "reset_config srst_only srst_push_pull; init; reset halt; flash write_image erase /home/arduino/klipper-stm32u585.bin 0x08000000 bin; verify_image /home/arduino/klipper-stm32u585.bin 0x08000000 bin; reset; shutdown"'
